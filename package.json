@@ -1,0 +1,33 @@
+{
+  "name": "text-us",
+  "description": "Text Us -- Broadcast texts for free via email. Invite people to groups and send or schedule text-blast messages.",
+  "version": "0.0.1",
+  "license": "Apache Version 2.0",
+  "author": "David Hudlow",
+  "engines": {
+    "node": ">=8.13.0"
+  },
+  "scripts": {
+    "prepare": "npm run gcp-build",
+    "pretest": "npm run gcp-build",
+    "start": "node ./index.js",
+    "lint": "tslint -p .",
+    "gcp-build": "tsc -p .",
+    "deploy": "gcloud app deploy"
+  },
+  "dependencies": {
+    "@google-cloud/datastore": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "typescript": "^3.0.1"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "^3.3.0",
+    "@types/express": "^4.16.0",
+    "tslint": "^5.11.0"
+  },
+  "cloud-repo-tools": {
+    "requiresKeyFile": true,
+    "requiresProjectId": true
+  }
+}
